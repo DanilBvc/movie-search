@@ -1,0 +1,165 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  max-width: 1920px;
+  min-width: 320px;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+.favorite__wrapper {
+  cursor: pointer;
+}
+.action-link {
+  color: black;
+  text-decoration: none;
+}
+.main-page__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin: 10px;
+}
+.pagination-wrapper {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  padding: 10px;
+}
+.main-page__wrapper {
+  margin: 10px;
+  background: #fff;
+  padding: 10px;
+}
+.details__up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.details__down-title {
+  font-size: 34px;
+  font-weight: 600;
+  color: #9b9b9b;
+  margin: 10px 0px;
+}
+body {
+  background-color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Tilt Warp', cursive;
+}
+.details__wrapper {
+  background-color: #3d3d3d;
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.details__down {
+  color: #efe1e1;
+}
+.details__up-movie h2 {
+  color: #fff;
+  font-size: 34px;
+  margin: 0;
+}
+.details-up-type {
+  color: #9b9b9b;
+  font-weight: 100;
+}
+.details__up-table-item {
+  color: #686565;
+  margin: 10px 0px;
+}
+.details__up-movie {
+  margin-left: 10px;
+}
+.details__up-table {
+  padding: 10px;
+  background: black;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+@media (max-width: 1100px) {
+  .details__wrapper {
+    margin: 10px;
+  }
+  .main-page__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 850px) {
+  .details__up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.nothing-found {
+  color: #fff;
+}

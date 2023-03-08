@@ -9,7 +9,13 @@ export const saveFavorite = (store: MiddlewareAPI) => (next: Dispatch) => (actio
 }) => {
   const getFavoriteFromLocalStorage = localStorage.getItem('favorite')
   if (action.payload.favorite !== null && action.type === 'SET_FAVORITE') {
-    localStorage.setItem("favorite", JSON.stringify(action.payload.favorite))
+    if (getFavoriteFromLocalStorage === null) {
+      localStorage.setItem("favorite", JSON.stringify(action.payload.favorite))
+    } else {
+      const arr: string[] = JSON.parse(getFavoriteFromLocalStorage)
+      arr.push(action.payload.favorite[0])
+      localStorage.setItem("favorite", JSON.stringify(arr))
+    }
   }
   if (action.payload.favorite !== null && action.type === 'REMOVE_FAVORITE' && getFavoriteFromLocalStorage) {
     const favoriteArray = JSON.parse(getFavoriteFromLocalStorage)

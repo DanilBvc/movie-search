@@ -15,6 +15,11 @@ export const setMovieReducer = (state = initialState, action: {
           favorite: [...state.favorite],
           movies: [...action.payload.data]
         }
+      } else if (action.payload.data === null) {
+        return {
+          favorite: [...state.favorite],
+          movies: null
+        }
       }
       return state
     }
