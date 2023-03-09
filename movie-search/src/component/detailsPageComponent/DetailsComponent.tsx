@@ -1,5 +1,4 @@
 import { movieItemFull } from '@/types/movieItem'
-import { IReducers } from '@/types/store/reducers'
 import { fetchMovieByID } from '@/utils/fecthMovieByID'
 import { CircularProgress } from '@mui/material'
 import { useRouter } from 'next/router'
@@ -8,6 +7,7 @@ import React, { useEffect, useState } from 'react'
 function DetailsComponent() {
   const [loading, setLoading] = useState(false)
   const router = useRouter()
+
   const [currentMovie, setCurrentMovie] = useState<movieItemFull>()
   const { id } = router.query
   useEffect(() => {
@@ -19,7 +19,8 @@ function DetailsComponent() {
   return (
     <>
       {loading && <CircularProgress />}
-      <div>{currentMovie !== undefined ? <div className="details__wrapper">
+      {(currentMovie !== undefined && currentMovie.Response === 'False') ? <div className='details-error'>Something went wrong...</div> : null}
+      <div>{currentMovie !== undefined && currentMovie.Response === 'True' ? <div className="details__wrapper">
         <div className="details__up">
           <div className="details__up-poster">
             <img src={currentMovie?.Poster} alt={currentMovie.Title} />
@@ -63,7 +64,6 @@ function DetailsComponent() {
         </div>
       </div> : <div>Nothing found</div>}
       </div>
-
     </>
   )
 }
