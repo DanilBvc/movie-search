@@ -1,11 +1,11 @@
+import { Actions } from './../../../types/store/actions';
 import { movieItem } from '@/types/movieItem';
 
-const action = 'SET_FAVORITE'
 const setFavorite = (payload: {
   data: movieItem[] | null,
   favorite: string[] | null
 }) => ({
-  type: action,
+  type: Actions.setFav,
   payload,
 });
 export default setFavorite;

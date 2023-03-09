@@ -1,10 +1,10 @@
+import { Actions } from '@/types/store/actions';
 import { movieItem } from './../../../types/movieItem';
-const action = 'SET_MOVIE'
 const setMovies = (payload: {
   data: movieItem[] | null,
   favorite?: string[] | null
 }) => ({
-  type: action,
+  type: Actions.setMovies,
   payload,
 });
 export default setMovies;

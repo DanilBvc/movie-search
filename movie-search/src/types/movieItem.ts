@@ -34,5 +34,5 @@ export interface movieItemFull {
   BoxOffice: string,
   Production: string,
   Website: string,
-  Response: boolean
+  Response: string
 }

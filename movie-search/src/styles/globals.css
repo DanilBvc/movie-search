@@ -38,7 +38,6 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  max-width: 1920px;
   min-width: 320px;
 }
 
@@ -108,7 +107,7 @@ select {
   margin: 10px 0px;
 }
 body {
-  background-color: black;
+  background-color: #e7e7e7;
   font-family: 'Montserrat', sans-serif;
   font-family: 'Tilt Warp', cursive;
 }
@@ -161,5 +160,8 @@ body {
   }
 }
 .nothing-found {
-  color: #fff;
+  color: black;
+}
+.details-error {
+  color: black;
 }

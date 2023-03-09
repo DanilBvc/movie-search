@@ -37,7 +37,6 @@ function MainPage() {
   useEffect(() => {
     setLoading(true)
     fetchMovies(searchInput, page).then((data) => {
-      console.log(data)
       if (data !== undefined) {
         dispatch(setMovies({ data }))
       } else {
